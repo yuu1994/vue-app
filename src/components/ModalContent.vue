@@ -1,6 +1,6 @@
 <template>
-  <div class="backdrop">
-    <div class="modal" :class="{delete:theme=='delete'}">
+  <div class="backdrop" @click.self="closeModalHandler">
+    <div class="modal" :class="{delete:theme=='delete',success:theme=='success'}">
         <h1>{{ header }}</h1>
         <p>{{ content }} <span>{{ username }}</span></p>
     </div>
@@ -11,7 +11,12 @@
 export default {
     props : [
       'header' , 'content' ,'username' , 'theme'
-    ]
+    ],
+    methods : {
+      closeModalHandler(){
+        this.$emit('close')
+      }
+    }
 }
 </script>
 

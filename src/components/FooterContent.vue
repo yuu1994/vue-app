@@ -17,7 +17,7 @@ export default{
 .footer {
     position: fixed;
     bottom: 0;
-    background-color: blue;
+    background-color: rgb(130, 130, 242);
     width: 100%;
     height: 50px;
     font-size: 2rem;

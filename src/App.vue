@@ -1,6 +1,12 @@
 <template>
   <h1>Hello Vue</h1>
-  <ModalContent :header="header" :content="content" :username="username" :theme="theme" />
+  <div class="" v-if="showModal">
+    <ModalContent :header="header" :content="content" :username="username" :theme="theme" @close="showModal=false" />
+  </div>
+  <button @click="showModal=!showModal">
+    <span v-if="!showModal">Show Modal</span>
+    <span v-if="showModal">hide Modal</span>
+  </button>
   <FooterContent/>
 </template>
 
@@ -13,7 +19,8 @@ export default {
         header : "Delete success",
         content : "we are very sorry for inconvenience",
         username : "kei",
-        theme : "delete"
+        theme : "delete",
+        showModal : false ,
       }
     },
   components: {
