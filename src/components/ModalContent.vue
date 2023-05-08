@@ -1,8 +1,11 @@
 <template>
   <div class="backdrop" @click.self="closeModalHandler">
-    <div class="modal" :class="{delete:theme=='delete',success:theme=='success'}">
+    <div class="modal" :class="{success:theme=='success',delete:theme2=='delete'}">
         <h1>{{ header }}</h1>
         <p>{{ content }} <span>{{ username }}</span></p>
+          <!-- <slot/> -->
+        <h1>{{ header2 }}</h1>
+        <p>{{ content2 }} <span>{{ username2 }}</span></p>
     </div>
   </div>
 </template>
@@ -10,7 +13,8 @@
 <script>
 export default {
     props : [
-      'header' , 'content' ,'username' , 'theme'
+      'header' , 'content' ,'username' , 'theme' ,
+      'header2' , 'content2' ,'username2' , 'theme2'
     ],
     methods : {
       closeModalHandler(){
@@ -51,4 +55,5 @@ export default {
     span {
       font-size: 2rem;
     }
+
 </style>
