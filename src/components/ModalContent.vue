@@ -1,6 +1,6 @@
 <template>
   <div class="backdrop">
-    <div class="modal" :class="{success:theme=='success'}">
+    <div class="modal" :class="{delete:theme=='delete'}">
         <h1>{{ header }}</h1>
         <p>{{ content }} <span>{{ username }}</span></p>
     </div>
@@ -35,7 +35,15 @@ export default {
       margin-bottom: 3rem;
     }
     .success {
-      background-color: blueviolet;
+      background-color: green;
       color: white;
+    }
+    .delete {
+      background-color: red;
+      color: white;
+    }
+
+    span {
+      font-size: 2rem;
     }
 </style>

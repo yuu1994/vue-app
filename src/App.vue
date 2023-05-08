@@ -1,6 +1,6 @@
 <template>
   <h1>Hello Vue</h1>
-  <ModalContent header="Login Success" content="Welcome" username="Kiyotaka" theme="success" />
+  <ModalContent :header="header" :content="content" :username="username" :theme="theme" />
   <FooterContent/>
 </template>
 
@@ -8,6 +8,14 @@
 import ModalContent from "./components/ModalContent.vue";
 import FooterContent from "./components/FooterContent.vue"
 export default {
+    data(){
+      return {
+        header : "Delete success",
+        content : "we are very sorry for inconvenience",
+        username : "kei",
+        theme : "delete"
+      }
+    },
   components: {
     ModalContent , FooterContent 
   },
